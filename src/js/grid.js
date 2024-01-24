@@ -1,9 +1,9 @@
-import { Cell } from "./cell";
+import Cell from "./cell";
 
 const GRID_SIZE = 4;
 const CELLS_COUNT = GRID_SIZE * GRID_SIZE;
 
-export class Grid {
+class Grid {
   constructor(gameElement) {
     this.cells = [];
 
@@ -15,10 +15,11 @@ export class Grid {
     }
   }
 
-  isEmpty() {}
   getRandomEmptyCell() {
     const emptyCells = this.cells.filter((cell) => cell.isEmpty());
     const randomIndex = Math.floor(Math.random() * emptyCells.length);
     return emptyCells[randomIndex];
   }
 }
+
+export default Grid;

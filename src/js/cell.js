@@ -1,4 +1,4 @@
-export class Cell {
+class Cell {
   constructor(gridElement, x, y) {
     const cell = document.createElement("li");
     cell.classList.add("cell");
@@ -7,4 +7,15 @@ export class Cell {
     this.x = x;
     this.y = y;
   }
+
+  linkTile(tile) {
+    tile.setXY(this.x, this.y);
+    this.linkedTile = tile;
+  }
+
+  isEmpty() {
+    return !this.linkedTile;
+  }
 }
+
+export default Cell;
