@@ -17,7 +17,6 @@ class Cell {
     tile.setXY(this.x, this.y);
     // Запишем в экзепляр нашу ячейку
     this.linkedTile = tile;
-    console.log("this.linkedTile:", this.linkedTile);
     /**
      * На выходе имеем 
      * tileElement: 

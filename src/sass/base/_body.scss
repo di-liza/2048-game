@@ -4,6 +4,9 @@
 
   --x: 2;
   --y: 1;
+
+  --bg-ligthness: #fff;
+  --text-ligthness: #000;
 }
 
 * {
@@ -55,8 +58,8 @@ body {
   font-size: 7.5vmin;
   font-weight: 500;
 
-  background-color: #fff;
-  color: black;
+  background-color: hsl(25, 60%, var(--bg-ligthness));
+  color: hsl(20, 25%, var(--text-ligthness));
 
   transition: 100ms ease-in-out;
   animation: cell-move 200ms;

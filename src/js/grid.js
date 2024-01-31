@@ -25,6 +25,8 @@ class Grid {
       // Туда передаем наше поле и координаты x, y
       this.cells.push(new Cell(gameElement, x, y));
     }
+
+    this.cellGropuByColumn = this.groupCellsByColumn();
   }
 
   // Метод дающий рандомную клеточку
@@ -39,6 +41,14 @@ class Grid {
 
     // Теперь может получить наш рандомный елемент в масиве пока еще пустых клеток
     return emptyCells[randomIndex];
+  }
+
+  groupCellsByColumn() {
+    return this.cells.reduce((groupedCells, cell) => {
+      groupedCells[cell.x] = groupedCells[cell.x] || [];
+      groupedCells[cell.x][cell.y] = cell;
+      return groupedCells;
+    });
   }
 }
 
